@@ -14,12 +14,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKKEN }}
 
       - run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git fetch origin
-          git checkout -B production
+          git checkout -B production-new
           git reset --hard origin/main
-          git push origin production --force
+          git push origin production-new --force
